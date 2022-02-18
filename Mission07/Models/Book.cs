@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Mission07.Models
 {
-    public partial class Books
+    public partial class Book
     {
         public long BookId { get; set; }
         public string Title { get; set; }

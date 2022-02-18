@@ -19,7 +19,7 @@ namespace Mission07.Models
         {
         }
 
-        public virtual DbSet<Books> Books { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,7 +32,7 @@ namespace Mission07.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Books>(entity =>
+            modelBuilder.Entity<Book>(entity =>
             {
                 entity.HasKey(e => e.BookId);
 
