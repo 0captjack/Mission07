@@ -17,9 +17,14 @@ namespace Mission07.Controllers
         }
         
         /*public IActionResult Index() => View();*/
-        public IActionResult Index()
+        public IActionResult Index(int pageNum = 1)
         {
-            var variable1 = repo.Books.ToList();
+            int pageSize = 10;
+
+            var variable1 = repo.Books
+                .OrderBy(b => b.Title)
+                .Skip((pageNum - 1) * pageSize)
+                .Take(pageSize);
             
             return View(variable1);
         }
