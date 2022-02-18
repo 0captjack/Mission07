@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mission07.Models;
+using Mission07.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,23 @@ namespace Mission07.Controllers
         {
             int pageSize = 10;
 
-            var variable1 = repo.Books
+            var variable2 = new BooksViewModel
+            {
+                Books = repo.Books
                 .OrderBy(b => b.Title)
                 .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize);
+                .Take(pageSize),
+
+                PageInfo = new PageInfo
+                {
+                    TotalNumBooks = repo.Books.Count(),
+                    BooksPerPage = pageSize,
+                    CurrentPage = pageNum
+                }
+            };
+
             
-            return View(variable1);
+            return View(variable2);
         }
 
         
