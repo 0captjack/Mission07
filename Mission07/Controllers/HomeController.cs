@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 namespace Mission07.Controllers
 {
     public class HomeController : Controller
-    {           
-        private BookstoreContext context { get; set; }
+    {
+        private IBookstoreRepository repo;
 
-        public HomeController (BookstoreContext temp)
+        public HomeController (IBookstoreRepository temp)
         {
-            context = temp;
+            repo = temp;
         }
         
         /*public IActionResult Index() => View();*/
         public IActionResult Index()
         {
-            var variable1 = context.Books.ToList();
+            var variable1 = repo.Books.ToList();
             
             return View(variable1);
         }

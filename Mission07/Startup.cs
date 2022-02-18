@@ -34,6 +34,8 @@ namespace Mission07
                options.UseSqlite(Configuration["ConnectionStrings:BookConnection"]);
 
            });
+
+            services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
         }
 
 
