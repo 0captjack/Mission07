@@ -36,6 +36,12 @@ namespace Mission07
            });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession();
         }
 
 
@@ -47,7 +53,7 @@ namespace Mission07
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -68,6 +74,8 @@ namespace Mission07
                 
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
         }
     }
