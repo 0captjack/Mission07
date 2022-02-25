@@ -17,7 +17,7 @@ namespace Mission07.Pages
         {
             repo = temp;
         }
-
+        //This is the controller for the Shopping Cart ??
         public Cart cart { get; set; }
         public string ReturnUrl { get; set; }
         public void OnGet(string returnUrl)
@@ -32,9 +32,9 @@ namespace Mission07.Pages
 
             cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
             cart.AddItem(b, 1);
-
+            //the power of a session & cached data
             HttpContext.Session.SetJson("cart", cart);
-
+            //returnURL wizardry
             return RedirectToPage(new { ReturnUrl = returnUrl });
         }
     }

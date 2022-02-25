@@ -8,7 +8,7 @@ namespace Mission07.Models
     public class Cart
     {
         public List<CartLineItem> Items { get; set; } = new List<CartLineItem>();
-
+        //model for Shopping Cart and controller for the cart line item??
         public void AddItem (Book book, int qty)
         {
             CartLineItem line = Items
@@ -38,7 +38,7 @@ namespace Mission07.Models
     }
 
     public class CartLineItem
-    {
+    { //model
         public int LineID { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }
