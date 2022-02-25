@@ -20,7 +20,8 @@ namespace Mission07.Models
                 Items.Add(new CartLineItem
                 {
                 Book = book,
-                Quantity = qty
+                Quantity = qty,
+                Price = book.Price
                 });
             }
             else
@@ -31,7 +32,7 @@ namespace Mission07.Models
 
         public double CalculateTotal()
         {
-            double sum = Items.Sum(x => x.Quantity * 25);
+            double sum = Items.Sum(x => x.Quantity * x.Price); //book.price 
             return sum;
         }
     }
