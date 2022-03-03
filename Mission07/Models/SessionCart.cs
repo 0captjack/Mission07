@@ -13,7 +13,7 @@ namespace Mission07.Models
     {
         public static Cart GetCart (IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<HttpContextAccessor>()?.HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
             SessionCart cart = session?.GetJson<SessionCart>("Cart") ?? new SessionCart();
 

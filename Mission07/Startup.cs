@@ -45,7 +45,7 @@ namespace Mission07
 
             services.AddScoped<Cart>(x => SessionCart.GetCart(x));
 
-            services.AddSingleton<HttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
 
