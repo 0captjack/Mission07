@@ -42,6 +42,10 @@ namespace Mission07
             services.AddDistributedMemoryCache();
 
             services.AddSession();
+
+            services.AddScoped<Cart>(x => SessionCart.GetCart(x));
+
+            services.AddSingleton<HttpContextAccessor, HttpContextAccessor>();
         }
 
 

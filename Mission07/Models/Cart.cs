@@ -9,7 +9,7 @@ namespace Mission07.Models
     {
         public List<CartLineItem> Items { get; set; } = new List<CartLineItem>();
         //model for Shopping Cart and controller for the cart line item??
-        public void AddItem (Book book, int qty)
+        public virtual void AddItem (Book book, int qty)
         {
             CartLineItem line = Items
                 .Where(b => b.Book.BookId == book.BookId)
@@ -28,6 +28,16 @@ namespace Mission07.Models
             {
                 line.Quantity += qty;
             }
+        }
+
+        public virtual void RemoveItem (Book book)
+        {
+            Items.RemoveAll(x => x.Book.BookId == book.BookId);
+        }
+
+        public virtual void ClearCart ()
+        {
+            Items.Clear();
         }
 
         public double CalculateTotal()
