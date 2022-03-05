@@ -6,8 +6,10 @@
 <h2>CHECK OUT</h2>
 <p>Enter your information</p>
 
-<form method="post">
+<form method="post" asp-controller="Donation" asp-action="Checkout">
 
+    <div asp-validation-summary="All" class="text-danger"></div>
+    
     <h4>Ship To</h4>
 
     <div class="form-group">
@@ -36,7 +38,7 @@
         <label asp-for="Country">Country</label>
         <input asp-for="Country" class="form-control" />
     </div>
-
+    <br />
     <div class="checkbox">
         <label>
             <input asp-for="EmailReceipt" /> EmailReceipt
