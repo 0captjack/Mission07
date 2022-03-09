@@ -48,6 +48,8 @@ namespace Mission07
             services.AddScoped<Cart>(x => SessionCart.GetCart(x));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddServerSideBlazor();
         }
 
 
@@ -82,6 +84,9 @@ namespace Mission07
                 endpoints.MapDefaultControllerRoute();
 
                 endpoints.MapRazorPages();
+
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
         }
     }
