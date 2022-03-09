@@ -9,6 +9,7 @@ namespace Mission07.Components
 {
     public class TypesViewComponent : ViewComponent
     {
+
         private IBookstoreRepository repo { get; set; }
         public TypesViewComponent (IBookstoreRepository temp)
         {
@@ -28,3 +29,17 @@ namespace Mission07.Components
         }
     }
 }
+
+//public class BasketSummaryViewComponent : ViewComponent
+//{
+//    private Cart cart;
+
+//    public BasketSummaryViewComponent(Cart cartService)
+//    {
+//        cart = cartService;
+//    }
+//    public IViewComponentResult Invoke()
+//    {
+//        return View(cart);
+//    }
+//}
