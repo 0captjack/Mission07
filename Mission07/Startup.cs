@@ -63,6 +63,11 @@ namespace Mission07
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
+            //app.Use(async (context, next) => //this is from 414 take it out later!!!
+            //{
+            //    context.Response.Headers.Add("X-Xss-Protection", "1");
+            //    await next();
+            //});
 
             app.UseEndpoints(endpoints =>
             {

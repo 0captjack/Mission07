@@ -32,5 +32,7 @@ namespace Mission07.Models
         public string Country { get; set; }
 
         public bool EmailReceipt { get; set; }
+        [BindNever]
+        public bool DonationReceived { get; set; }
     }
 }
