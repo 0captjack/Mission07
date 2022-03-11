@@ -1,10 +1,10 @@
 ﻿@page "/admin/donations"
 @inherits OwningComponentBase<IDonationRepository>
 
-<DonationTable TableTitle="Uncollected" Donations="UncollectedDonations"
+<DonationTable TableTitle="Unfilled Orders" Donations="UncollectedDonations"
                ButtonLabel="Shipped" DonationSelected="CollectDonation"></DonationTable>
 
-<DonationTable TableTitle="CollectedDonations" Donations="CollectedDonations"
+<DonationTable TableTitle="Shipped Orders" Donations="CollectedDonations"
                ButtonLabel="Reset" DonationSelected="ResetDonation"></DonationTable>
 
 <button class="btn btn-info" @onclick="@(x => UpdateData())">Refresh Data</button>
