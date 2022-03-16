@@ -14,20 +14,20 @@
 
 <body>
 
-    <div class="bg-dark text-white p-2">
+    <div class="bg-dark text-white p-2 shadow-sm">
         <span class="navbar-brand m-1-2">Book Store</span>
     </div>
 
-    <div class="m-1 p-1">
+    <div class="m-1 p-1 shadow-sm">
         <div class="text-danger" asp-validation-summary="All"></div>
 
         <form method="post" asp-controller="Account" asp-action="Login">
-            <div class="form-group">
+            <div class="form-group shadow-sm">
                 <label asp-for="Username">User Name:</label>
                 <input asp-for="Username" class="form-control" />
             </div>
 
-            <div class="form-group">
+            <div class="form-group shadow-sm">
                 <label asp-for="Password">Password</label>
                 <input asp-for="Password" class="form-control" type="password"/>
             </div>
